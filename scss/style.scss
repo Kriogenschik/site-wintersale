@@ -1,0 +1,473 @@
+@use './adaptive';
+@import url(../css/NullStyle.css);
+@import url(../css/fonts.css);
+
+
+body{
+   font-family: montserrat;
+   height: 100%;
+   background-color: #96cdf7;
+   overflow: hidden;
+}
+.header {
+   position: absolute;
+   top: 0;left: 0;
+   width: 100%;
+   background-color: #5184b6;
+   z-index: 10;
+   &__container {
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__logo {
+      width: 9%;
+      @include adaptive.adaptive-value("height", 140, 90, 0);
+      position: relative;
+   }
+   &__logo-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;left: 0;
+      object-fit: contain;
+      transition-duration: 0.3s;
+      &:hover{
+         width: 105%;
+         height: 105%;
+      }
+   }
+   &__menu {
+      flex: 0 0 38%;
+      display: flex;
+      justify-content: space-between;
+   }
+   &__menu-ref {
+      color: white;
+      @include adaptive.adaptive-value("font-size", 30, 18, 0);
+      
+      font-weight: 600;
+      text-transform: uppercase;
+      transition-duration: 0.3s;
+      &:hover{
+         text-shadow: 0 0 3px white;
+      }
+   }
+
+   &__search {
+      flex: 0 0 34%;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__search-item {
+      width: 57%;
+      background-color: transparent;
+      @include adaptive.adaptive-value("font-size", 30, 18, 0);
+      border: 2px solid white;
+      border-radius: 40px;
+      padding: 2% 7%;
+      color: white;
+      transition-duration: 0.3s;
+      &::placeholder{
+         color: white;
+         text-align: right;
+         text-transform: uppercase;
+      }
+      &:focus{
+         box-shadow: 0 0 5px white;
+      }
+   }
+}
+.header-social {
+   flex: 0 0 33%;
+   display: flex;
+   justify-content: space-between;
+   &__ref {
+      display: inline-block;
+      width: 21%;
+      height: 100%;
+      position: relative;
+}
+   &__icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;left: 0;
+      object-fit: contain;
+      transition-duration: 0.3s;
+      &:hover{
+         width: 105%;
+         height: 105%;
+      }
+}
+}
+.textblock {
+   z-index: 10;
+   height: 100%;
+   &__container {
+      position: relative;
+      height: 100%;
+   }
+   &__sale {
+      position: absolute;
+      top: 0%;left: 36vw;
+      width: 28vw;
+      height: 55vh;
+   }
+   &__desk {
+      position: relative;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+   }
+   &__desk-img {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      //object-fit: cover;
+   }
+   &__text-item1 {
+      position: absolute;
+      top: 57%;left: 11%;
+      @include adaptive.adaptive-value("font-size", 135, 70, 0);
+      color: white;
+      font-family: 'Kaushan Script';
+   }
+   &__text-item2 {
+      position: absolute;
+      top: 79%;left: 29%;
+      @include adaptive.adaptive-value("font-size", 90, 40, 0);
+      color: white;
+      font-weight: 700;
+      font-family: montserrat;
+      text-transform: uppercase;
+   }
+   &__promo {
+      position: absolute;
+      top: 60%;left: 33%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: montserrat;
+      color: #064460;
+      width: 34vw;
+      text-align: center;
+      z-index: 10;
+   }
+   &__promo-title {
+      font-weight: 600;
+      @include adaptive.adaptive-value("font-size", 36, 18, 0);
+   }
+   &__promo-text {
+      margin-top: 3%;
+      font-weight: 500;
+      @include adaptive.adaptive-value("font-size", 28, 15, 0);
+   }
+   &__promo-button {
+      margin-top: 8%;
+      width: 100%;
+      z-index: 10;
+      @include adaptive.adaptive-value("font-size", 28, 15, 0);
+   }
+   &__special {
+      position: absolute;
+      width: 17vw;
+      height: 17vw;
+      top: 46%;left: 12%;
+   }
+   &__special-snowball {
+      position: relative;
+      width: 100%;
+      height: 100%;
+   }
+   &__special-img {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: rotate 15s linear infinite;
+   }
+   &__special-title {
+      position: absolute;
+      top: 17%;left: 17%;
+      @include adaptive.adaptive-value("font-size", 38, 20, 0);
+      color: #ca4e4e;
+      font-family: 'Kaushan Script';
+   }
+   &__special-get {
+      position: absolute;
+      top: 36%;left: 23%;
+      @include adaptive.adaptive-value("font-size", 30, 15, 0);
+      color:#0f5479;
+      font-weight: 700;
+      text-transform: uppercase;
+   }
+}
+.promo-button {
+   color: white;
+   background-color: #064460;
+   border-radius: 20px;
+   padding: 2% 6%;
+   transition-duration: 0.3s;
+   z-index: 10;
+   &:hover{
+      background-color: #0a5a80;
+   }
+}
+.special-percent1 {
+   position: absolute;
+      top: 45%;left: 13%;
+      @include adaptive.adaptive-value("font-size", 120, 64, 0);
+      color:#0f5479;
+      font-weight: 700;
+      text-transform: uppercase;
+}
+.special-percent2 {
+   position: absolute;
+      top: 45%;left: 61%;
+      @include adaptive.adaptive-value("font-size", 80, 36, 0);
+      color:#0f5479;
+      font-weight: 700;
+      text-transform: uppercase;
+}
+.special-percent3 {
+   position: absolute;
+      top: 65%;left: 61%;
+      @include adaptive.adaptive-value("font-size", 36, 20, 0);
+      color:#0f5479;
+      font-weight: 700;
+      text-transform: uppercase;
+}
+.background {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;left: 0;
+   &__snow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+   }
+   &__snow-container{
+      position: relative;
+      width: 100%;
+      height: 100%;
+   }
+   &__snow-1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 26%;
+   }
+   &__snow-2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 7%;
+   }
+   &__snow-3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 16%;
+   }
+   &__trees{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+   }
+   &__trees-container{
+      position: relative;
+      width: 100%;
+      height: 100%;
+   }
+   &__trees-1 {
+      position: absolute;
+      top:11%;
+      left: 0;
+      width: 27%;
+      height: 26%;
+      }
+      &__trees-2 {
+         position: absolute;
+         top:14%;
+         right: 0;
+         width: 26%;
+         height: 18%;
+      }
+      &__trees-3 {
+         position: absolute;
+         top:60%;
+         left: 0;
+         width: 13.5%;
+         height: 28%;
+      }
+      &__trees-4 {
+         position: absolute;
+         top:56%;
+         right: 0;
+         width: 15%;
+         height: 30%;
+      }
+      &__snowman {
+         z-index: 3;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      &__snowman-container {
+         position: relative;
+         width: 100%;
+         height: 100%;
+      }
+      &__snowman1 {
+         position: absolute;
+         top:53.5%;
+         right: 10%;
+         width: 20%;
+         height: 36%;
+      }
+      &__snowflake {
+         z-index: 4;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+      }
+      &__snowflake-container {
+         position: relative;
+         z-index: 7;
+         width: 100%;
+         height: 100%;
+         background: url(../img/snowflake-bg.png) center/cover no-repeat;
+      }
+   .snowflake {
+      position: relative;
+      width: 100%;
+      height: 100%;
+   }
+   .snowflake-item {
+      position: absolute;
+      top:0%;
+      width: 30px;
+      height: 30px;
+
+      &:nth-child(1){
+         left:8%;
+         animation: fallingRotate 32s ease infinite 0.5s;
+      }
+      &:nth-child(2){
+         left:27%;
+         width: 25px;
+         height: 25px;
+         animation: fallingRotate 29s ease-in infinite 0.6s;
+      }
+      &:nth-child(3){
+         left:55%;
+         width: 28px;
+         height: 28px;
+         animation: fallingRotate 39s ease-in-out infinite 0.2s;
+      }
+      &:nth-child(4){
+         left:70%;
+         width: 33px;
+         height: 33px;
+         animation: fallingRotate 17s linear infinite 4s;
+      }
+      &:nth-child(5){
+         left:90%;
+         animation: fallingRotate 28s ease-out 2s infinite;
+      }
+   }
+   @keyframes rotate{
+      0%{rotate: (0deg);}
+      100%{rotate: (360deg);}
+   }
+   @keyframes fallingRotate{
+      0%{top: (0%);
+         rotate: (0deg);}
+      100%{top: (100%);
+      rotate: (360deg);}
+   }
+   // .snowflake-round {
+   //    position: relative;
+   //    width: 100%;
+   //    height: 100%;
+   // }
+   .snowflake-round-item {
+      position: absolute;
+      top:20%;
+      opacity: 0.6;
+      background-color: white;
+      border-radius: 50%;
+      &:nth-child(6){
+         left:7%;
+         width: 13px;
+         height: 13px;
+         animation: fallingRotate 29s ease-out 3.8s infinite;
+      }
+      &:nth-child(7){
+         left:11%;
+         width: 10px;
+         height: 10px;
+         animation: fallingRotate 15s ease-out 1.4s infinite;
+      }
+      &:nth-child(8){
+         left:18%;
+         width: 5px;
+         height: 5px;
+         animation: fallingRotate 23s ease-out 0.5s infinite;
+      }
+      &:nth-child(9){
+         left:26%;
+         width: 11px;
+         height: 11px;
+         animation: fallingRotate 37s ease-out 4.2s infinite;
+      }
+      &:nth-child(10){
+         left:35%;
+         width: 9px;
+         height: 9px;
+         animation: fallingRotate 26s ease-out 3s infinite;
+      }
+      &:nth-child(11){
+         left:47%;
+         width: 12px;
+         height: 12px;
+         animation: fallingRotate 19s ease-out 2.5s infinite;
+      }
+      &:nth-child(12){
+         left:54%;
+         width: 6px;
+         height: 6px;
+         animation: fallingRotate 27s ease-out 2.6s infinite;
+      }
+      &:nth-child(13){
+         left:68%;
+         width: 10px;
+         height: 10px;
+         animation: fallingRotate 12s ease-out 5.3s infinite;
+      }
+      &:nth-child(14){
+         left:73%;
+         width: 13px;
+         height: 13px;
+         animation: fallingRotate 30s ease-out 0s infinite;
+      }
+      &:nth-child(15){
+         left:20%;
+         width: 8px;
+         height: 8px;
+         animation: fallingRotate 13s ease-out 4s infinite;
+      }
+
+   }
+   
+}
